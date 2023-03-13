@@ -3,7 +3,7 @@
     <head>
         <style>
             .topBar {
-                position:absolute;
+                position:fixed;
                 width:100%;
                 height:10%;
                 left:0px;
@@ -11,14 +11,29 @@
                 background-color:#555;
             }
             .sideBar {
-                position:absolute;
-                width:30%;
+                position:fixed;
+                display:block;
+                width:25%;
                 height:100%;
                 left:0px;
                 top:0px;
-                background-color:#3F3F3F;
+                background-color:#29272b;
             }
-            button {
+            .body {
+                display: block;
+                overflow-y:auto;
+                overflow-x:hidden;
+                background-color: #3d3d3d;
+            }
+            .item-div {
+                position:absolute;
+                left:25%;
+                top:10%;
+                width:75%;
+                height:100%;
+                padding:12px;
+            }
+            .button {
                 background-color: #555;
                 color: #FFF;
                 border:none;
@@ -29,25 +44,96 @@
                 top:0%;
                 width:10%;
                 height:100%;
-                transition-duration:0.4s;
+                transition-duration:0.2s;
                 cursor:pointer;
             }
-            button:hover {
+            .button:hover {
                 background-color: #2F2F2F;
             }
+            .b2 {
+                left:11.5%;
+            }
+            .item {
+                background-color: #29272b;
+                float: left;
+                width: 75px;
+                height: 75px;
+                margin: 10px;
+                cursor:pointer;
+                transition-duration:0.2s;
+            }
+            .item:hover {
+                background-color:#131214;
+            }
+            a.item:hover .info-container {
+                display:block;
+                top:10%;
+                left:0%;
+            }
+            .item-hover {
+                text-align:center;
+            }
+            .info-container {
+                display:none;
+                position:fixed;
+                top:-50%;
+                left:-50%;
+                width:25%;
+                height:100%;
+                color:#FFF;
+            }
+            .item-title {
+                text-transform:uppercase;
+                line-height:0.4;
+                color:#ececec;
+                text-decoration-line:underline;
+                font-size:25px;
+            }
+            .item-tooltip {
+                line-height:0.1;
+                color:#33be2e;
+                font-size:15px;
+            }
+            .item-quality {
+                line-height:0.3;
+                color:#eeff00;
+            }
+            .item-description {
+                margin-left:10px;
+                margin-right:10px;
+                text-align:left;
+            }
+            hr {
+                margin-left:10px;
+                margin-right:10px;
+            }
+
         </style>
         <title>Dead God</title>
     </head>
-    <header>
+    <body class="body">
         <section class="section sideBar">
-            <menu>
-            </menu>
         </section>
-        <section class="section topBar">
-            <menu>
-                <button>PLACEHOLDER1</button>
-                <button style="left:11.5%;">PLACEHOLDER2</button>
-            </menu>
-        </section>
-    </header>
+        <div class="item-div">
+            <a class="item">
+                <div class="info-container">
+                    <span class="item-hover">
+                        <p class="item-title">Placeholder Title</p>
+                        <p class="item-tooltip">Placeholder Tooltip</p>
+                        <p class="item-quality">Quality: 0</p>
+                        <hr>
+                        <p class="item-description">The FitnessGram™ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. <br><br> The 20 meter pacer test will begin in 30 seconds. <br> Line up at the start.<br> The running speed starts slowly, but gets faster each minute after you hear this signal.<br> [beep] <br><br>A single lap should be completed each time you hear this sound. <br>[ding] <br><br>Remember to run in a straight line, and run as long as possible. <br>The second time you fail to complete a lap before the sound, your test is over. <br>The test will begin on the word start. On your mark, get ready, start.</p>
+                    </span>
+                </div>
+            </a>
+        </div>
+        <header>
+            <section class="section topBar">
+                <menu>
+                    <button class="button b1">PLACEHOLDER1</button>
+                    <button class="button b2">PLACEHOLDER2</button>
+                </menu>
+            </section>
+        </header>
+    </body>
 </html>
